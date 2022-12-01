@@ -1,16 +1,13 @@
-import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
 
-public class YndexTest extends AbstractTest {
+public class YandexTest extends AbstractTest {
     @Order(1)
     @Test
     void myActiontest() throws InterruptedException {
@@ -57,7 +54,7 @@ public class YndexTest extends AbstractTest {
         }
     }
     //Проверка авторизации
-    @Order(3)
+    /*@Order(3)
     @Test
     void authorizationTest(){
         WebElement userPhoto = getDriver().findElement(By.cssSelector(".user-pic__image"));
@@ -68,10 +65,10 @@ public class YndexTest extends AbstractTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     //Работа с картой
-    @Order(4)
+    @Order(3)
     @Test
     void mapTest() {
         //Работа с картой,
@@ -86,7 +83,7 @@ public class YndexTest extends AbstractTest {
             e.printStackTrace();
         }
     }
-    @Order(5)
+    @Order(4)
     @Test
     void
     sectionsMapTest(){
@@ -141,7 +138,7 @@ public class YndexTest extends AbstractTest {
         //Assert Проверяем что есть на карте появилась шкала давления с значением "мм рт. ст"
         Assertions.assertNotNull(getDriver().findElement(By.xpath(".//div[text()='мм рт. ст.']")).isDisplayed());
     }
-    @Order(6)
+    @Order(5)
     @Test
         void forecastTenDayTest() {
         //Возвращаемся на главную
@@ -160,7 +157,7 @@ public class YndexTest extends AbstractTest {
         getDriver().navigate().back();
     }
 
-    @Order(7)
+    @Order(6)
     @Test void searchCityTest(){
         //Поиск города
         WebElement search = getDriver().findElement(By.cssSelector(".mini-suggest__input"));
@@ -175,7 +172,7 @@ public class YndexTest extends AbstractTest {
             e.printStackTrace();
         }
     }
-    @Order(8)
+    @Order(7)
     @Test
     void weatherMonthTest() {
         WebElement month = getDriver().findElement(By.xpath(".//a[text()='На месяц']"));
